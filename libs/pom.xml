@@ -15,6 +15,7 @@
         <module>cluster-api</module>
         <module>cluster-impl-default</module>
         <module>cluster-impl-optional</module>
+        <module>cluster-tests-integration</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

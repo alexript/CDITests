@@ -4,7 +4,9 @@
  */
 package net.napilnik.cluster.impl.optional;
 
+import jakarta.annotation.Priority;
 import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.enterprise.inject.Alternative;
 import jakarta.enterprise.inject.Default;
 import net.napilnik.cluster.api.ApiNamed;
 
@@ -13,7 +15,8 @@ import net.napilnik.cluster.api.ApiNamed;
  * @author malyshev
  */
 @ApplicationScoped
-@Default
+@Alternative
+@Priority(100)
 public class BeanNamedOptional implements ApiNamed {
 
     private static final String NAME = "I am BeanNamedOptional";
