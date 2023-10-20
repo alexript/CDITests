@@ -6,11 +6,10 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>pom</packaging>
     <modules>
-        <module>weld-tests</module>
-        <module>cluster-api</module>
-        <module>cluster-impl-default</module>
-        <module>cluster-impl-optional</module>
-        <module>some-bean</module>
+	<module>other</module>
+	<module>libs</module>
+        <module>beans</module>
+        <module>ears</module>
     </modules>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

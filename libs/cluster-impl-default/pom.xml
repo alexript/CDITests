@@ -2,20 +2,20 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>net.napilnik</groupId>
-        <artifactId>CDITests</artifactId>
+        <groupId>net.napilnik.libs</groupId>
+        <artifactId>libs</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>some-bean</artifactId>
+    <artifactId>cluster-impl-default</artifactId>
     <packaging>jar</packaging>
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>cluster-impl-default</artifactId>
+            <artifactId>cluster-api</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
     <properties>
-        <exec.mainClass>net.napilnik.some.bean.SomeBean</exec.mainClass>
+        <exec.mainClass>net.napilnik.cluster.impl.deflt.ClusterImplDefault</exec.mainClass>
     </properties>
 </project>
