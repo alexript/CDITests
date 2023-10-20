@@ -1,3 +1,5 @@
 target
 /nbproject/
 
+/weld-tests/nbproject/
+/some-bean/nbproject/
