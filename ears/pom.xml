@@ -26,12 +26,24 @@
 
     <dependencyManagement>
         <dependencies>
-        <dependency>
-            <groupId>jakarta.platform</groupId>
-            <artifactId>jakarta.jakartaee-api</artifactId>
-            <version>${jakartaee}</version>
-            <scope>provided</scope>
-        </dependency>
+            <dependency>
+                <groupId>jakarta.platform</groupId>
+                <artifactId>jakarta.jakartaee-api</artifactId>
+                <version>${jakartaee}</version>
+                <scope>provided</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.junit5</groupId>
+                <artifactId>arquillian-junit5-container</artifactId>
+                <version>1.7.1.Final</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.arquillian.junit5</groupId>
+                <artifactId>arquillian-junit5-core</artifactId>
+                <version>1.7.1.Final</version>
+                <scope>test</scope>
+            </dependency>
 
             <dependency>
                 <groupId>jakarta.enterprise</groupId>
@@ -50,6 +62,25 @@
                 <artifactId>jandex</artifactId>
                 <scope>provided</scope>
                 <version>3.1.2</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.wildfly.arquillian</groupId>
+                <artifactId>wildfly-arquillian-common</artifactId>
+                <version>5.0.1.Final</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.wildfly.arquillian</groupId>
+                <artifactId>wildfly-arquillian-container-embedded</artifactId>
+                <version>5.0.1.Final</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.wildfly.core</groupId>
+                <artifactId>wildfly-embedded</artifactId>
+                <version>22.0.0.Final</version>
+                <scope>test</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>

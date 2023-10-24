@@ -15,6 +15,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+        <wildfly.version>29.0.1.Final</wildfly.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -116,6 +117,11 @@
                     <artifactId>maven-failsafe-plugin</artifactId>
                     <version>3.1.2</version>
                 </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>3.6.0</version>
+                </plugin>
             </plugins>
         </pluginManagement>
         <plugins>
@@ -130,9 +136,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>3.1.2</version>
                 <executions>
                     <execution>
+                        <id>integration-test</id>
+                        <phase>integration-test</phase>
                         <goals>
                             <goal>integration-test</goal>
                             <goal>verify</goal>

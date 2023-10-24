@@ -14,6 +14,7 @@
         <module>app-named-ear</module>
         <module>app-named-web</module>
         <module>app-named-ejb</module>
+        <module>app-named-integration</module>
     </modules>
 
 </project>
