@@ -20,6 +20,9 @@
         <wildfly.version>29.0.1.Final</wildfly.version>
         <wildfly.foldername>wildfly-${wildfly.version}</wildfly.foldername>
         <wildfly.path>${vendor.path}/${wildfly.foldername}</wildfly.path>
+        <wildfly.port>18080</wildfly.port>
+        <wildfly.managementPort>19990</wildfly.managementPort>
+        <jboss.management.http.port>${wildfly.managementPort}</jboss.management.http.port>
     </properties>
     <dependencyManagement>
         <dependencies>

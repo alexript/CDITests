@@ -9,7 +9,9 @@
         <configuration>
             <property name="jbossHome">../../../${vendor.foldername}/${wildfly.foldername}</property>
             <property name="modulePath">../../../${vendor.foldername}/${wildfly.foldername}/modules</property>
-            <!--<property name="allowConnectingToRunningServer">true</property>-->
+            <property name="port">${wildfly.port}</property>
+            <property name="managementPort">${wildfly.managementPort}</property>
+            <property name="jbossArguments">-Djboss.http.port=${wildfly.port} -Djboss.management.http.port=${wildfly.managementPort}</property>
         </configuration>
     </container>
 </arquillian>
