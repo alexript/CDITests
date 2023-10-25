@@ -7,9 +7,9 @@
             <property name="executionType">MANAGED</property>
         </protocol>
         <configuration>
-            <property name="jbossHome">${basedir}/vendor/wildfly-${wildfly.version}</property>
-            <property name="modulePath">${project.basedir}/vendor/wildfly-${wildfly.version}/modules</property>
-            <property name="allowConnectingToRunningServer">true</property>
+            <property name="jbossHome">../../../${vendor.foldername}/${wildfly.foldername}</property>
+            <property name="modulePath">../../../${vendor.foldername}/${wildfly.foldername}/modules</property>
+            <!--<property name="allowConnectingToRunningServer">true</property>-->
         </configuration>
     </container>
 </arquillian>

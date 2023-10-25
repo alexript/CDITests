@@ -61,7 +61,7 @@
             </testResource>
         </testResources>
 
-        <plugins>
+<!--        <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
@@ -88,6 +88,6 @@
                 </executions>
             </plugin>
 
-        </plugins>
+        </plugins>-->
     </build>
 </project>
