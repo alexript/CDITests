@@ -3,19 +3,13 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>net.napilnik.ears</groupId>
-        <artifactId>app-named</artifactId>
+        <artifactId>app-optional</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>app-named-integration</artifactId>
+    <artifactId>app-optional-integration</artifactId>
     <packaging>jar</packaging>
     <dependencies>
-        <dependency>
-            <groupId>${project.groupId}</groupId>
-            <artifactId>app-named-ear</artifactId>
-            <version>${project.version}</version>
-            <scope>test</scope>
-            <type>ear</type>
-        </dependency>
+
         <dependency>
             <groupId>org.jboss.arquillian.junit5</groupId>
             <artifactId>arquillian-junit5-container</artifactId>
@@ -41,6 +35,13 @@
         <dependency>
             <groupId>jakarta.platform</groupId>
             <artifactId>jakarta.jakartaee-api</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>app-optional-ear</artifactId>
+            <version>${project.version}</version>
+            <type>ear</type>
             <scope>test</scope>
         </dependency>
     </dependencies>
