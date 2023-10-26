@@ -4,8 +4,10 @@
  */
 package net.napilnik.cditests;
 
+import jakarta.annotation.Resource;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Default;
+import jakarta.inject.Named;
 
 /**
  *
@@ -13,6 +15,7 @@ import jakarta.enterprise.inject.Default;
  */
 @ApplicationScoped
 @Default
+@Named("someBeanName")
 public class AlwaysEnabledBean implements SomeBean {
 
     public AlwaysEnabledBean() {

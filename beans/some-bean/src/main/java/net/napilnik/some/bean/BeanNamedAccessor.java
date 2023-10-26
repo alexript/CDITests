@@ -4,10 +4,13 @@
  */
 package net.napilnik.some.bean;
 
+import jakarta.annotation.Resource;
+import jakarta.ejb.EJB;
 import jakarta.enterprise.context.RequestScoped;
 import jakarta.enterprise.inject.Any;
 import jakarta.inject.Inject;
 import net.napilnik.cluster.api.ApiNamed;
+import net.napilnik.cluster.api.Overridable;
 
 /**
  *
@@ -17,8 +20,15 @@ import net.napilnik.cluster.api.ApiNamed;
 public class BeanNamedAccessor {
 
     @Inject
-    @Any
+    //@Resource
+    //@EJB
+    @Overridable
+//    @Any
     private ApiNamed namedBean;
+
+    public BeanNamedAccessor() {
+
+    }
 
     public String getBeanName() {
         return namedBean.getMyName();

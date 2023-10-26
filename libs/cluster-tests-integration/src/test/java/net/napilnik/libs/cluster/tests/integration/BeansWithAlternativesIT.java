@@ -7,6 +7,7 @@ package net.napilnik.libs.cluster.tests.integration;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.context.RequestScoped;
 import net.napilnik.cluster.api.ApiNamed;
+import net.napilnik.cluster.api.Overridable;
 import net.napilnik.cluster.impl.deflt.BeanNamedDefault;
 import net.napilnik.cluster.impl.optional.BeanNamedOptional;
 import org.jboss.weld.junit5.WeldInitiator;
@@ -24,11 +25,14 @@ import org.junit.jupiter.api.extension.ExtendWith;
 public class BeansWithAlternativesIT {
 
     @WeldSetup
-    public WeldInitiator weldWithOptional = WeldInitiator.from(BeanNamedDefault.class, BeanNamedOptional.class).activate(RequestScoped.class, ApplicationScoped.class).build();
+    public WeldInitiator weldWithOptional = WeldInitiator
+            .from(BeanNamedDefault.class, BeanNamedOptional.class)
+            .activate(RequestScoped.class, ApplicationScoped.class)
+            .build();
 
     @Test
     public void testOptionalBean() {
-        ApiNamed bean = weldWithOptional.select(ApiNamed.class).get();
+        ApiNamed bean = weldWithOptional.select(ApiNamed.class, Overridable.Literal.INSTANCE).get();
         assertTrue((bean instanceof BeanNamedOptional));
     }
 }

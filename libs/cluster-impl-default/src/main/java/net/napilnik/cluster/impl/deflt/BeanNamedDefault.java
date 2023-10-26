@@ -4,16 +4,24 @@
  */
 package net.napilnik.cluster.impl.deflt;
 
+import jakarta.annotation.Priority;
+import jakarta.ejb.Singleton;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.enterprise.inject.Default;
+import jakarta.inject.Named;
 import net.napilnik.cluster.api.ApiNamed;
+import net.napilnik.cluster.api.Overridable;
 
 /**
  *
  * @author malyshev
  */
-@ApplicationScoped
+//@ApplicationScoped
+@Singleton
+@Overridable
 @Default
+@Priority(0)
+@Named("beannamed")
 public class BeanNamedDefault implements ApiNamed {
 
     private static final String NAME = "I am BeanNamedDefault";
