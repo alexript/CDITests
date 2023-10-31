@@ -1,4 +1,4 @@
-package net.napilnik.ears.integration.tests;
+package net.napilnik.ears;
 
 import java.io.File;
 import java.net.URI;
@@ -16,6 +16,8 @@ import org.jboss.as.arquillian.container.ManagementClient;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.EnterpriseArchive;
+import org.jboss.shrinkwrap.api.spec.JavaArchive;
+import org.jboss.shrinkwrap.api.spec.WebArchive;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -29,16 +31,12 @@ import org.junit.jupiter.api.extension.ExtendWith;
  * @author malyshev
  */
 @ExtendWith(ArquillianExtension.class)
-public class AppNamedOverrideByOptionalResponseIT {
+public class AppNamedCombinedResponseIT {
 
-    @Deployment(testable = false, name = "app-named")
+
+     @Deployment(testable = false, name = "app-named")
     public static Archive<?> createAppNamedDeployment() {
-        return ShrinkWrap.createFromZipFile(EnterpriseArchive.class, new File("../ear/app-named-ear/target/app-named-ear-1.0-SNAPSHOT.ear"));
-    }
-
-    @Deployment(testable = false, name = "app-optional", managed = false)
-    public static Archive<?> createAppOptionalDeployment() {
-        return ShrinkWrap.createFromZipFile(EnterpriseArchive.class, new File("../ear/app-optional-ear/target/app-optional-ear-1.0-SNAPSHOT.ear"));
+        return ShrinkWrap.createFromZipFile(EnterpriseArchive.class, new File("../ear/app-combined-ear/target/app-combined-ear-1.0-SNAPSHOT.ear"));
     }
 
     @ContainerResource
@@ -57,14 +55,7 @@ public class AppNamedOverrideByOptionalResponseIT {
                 .newBuilder(new URI(baseUrl + "/app-named/resources/rest"))
                 .build();
         HttpResponse<String> response = client.send(request, BodyHandlers.ofString());
-        assertTrue(response.body().contains("I am BeanNamedDefault"));
-
-        deployer.deploy("app-optional");
-
-        response = client.send(request, BodyHandlers.ofString());
-//        assertTrue(response.body().contains("I am BeanNamedOptional"));
-
-        deployer.undeploy("app-optional");
+        assertTrue(response.body().contains("I am BeanNamedOptional"));
 
     }
 }

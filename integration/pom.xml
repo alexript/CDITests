@@ -125,9 +125,16 @@
             <scope>test</scope>
             <type>ear</type>
         </dependency>
-         <dependency>
+        <dependency>
             <groupId>net.napilnik.ear</groupId>
             <artifactId>app-optional-ear</artifactId>
+            <version>${project.version}</version>
+            <scope>test</scope>
+            <type>ear</type>
+        </dependency>
+        <dependency>
+            <groupId>net.napilnik.ear</groupId>
+            <artifactId>app-combined-ear</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
             <type>ear</type>
